@@ -10,7 +10,7 @@ const Nevbar = ({theme,setTheme}) => {
             MovieVerse
           </div>
           <div id="search">
-            <Search theme={theme}/>
+            {/* <Search theme={theme}/> */}
           </div>
           <div id="theme">
             <Theme theme={theme} setTheme={setTheme}/>
