@@ -1,24 +1,24 @@
 import React from 'react'
-import Search from './Search'
-import Theme from './Theme'
+import { User } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-const Nevbar = ({theme,setTheme}) => {
+const Navbar = ({ theme, setTheme, user }) => {
   return (
-    <>
-        <div className={`navbar w-full h-20 ${ theme === "dark" ? "bg-[#47464C] text-white" : "bg-[#6A8EE6] text-black"} flex items-center justify-around`}>
-          <div id="logo" className={`font-bold ${ theme === "dark" ? " text-[#E9C400]" : "text-black"} text-3xl `}>
-            MovieVerse
-          </div>
-          <div id="search">
-            <Search theme={theme}/>
-          </div>
-          <div id="theme">
-            <Theme theme={theme} setTheme={setTheme}/>
-          </div>
-        
+    <nav className="z-50 h-20 flex items-center px-8 justify-between w-full absolute top-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent">
+      
+      <span className="font-black text-5xl text-red-600">
+        NETFLIX
+      </span>
+
+      <Link to="/login">
+        <div className="w-10 h-10 rounded-md bg-red-600 flex items-center justify-center text-white font-bold">
+          {user?.name
+            ? user.name.charAt(0).toUpperCase()
+            : <User className="w-5 h-5" />}
         </div>
-    </>
+      </Link>
+    </nav>
   )
 }
 
-export default Nevbar
+export default Navbar
