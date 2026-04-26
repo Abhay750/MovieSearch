@@ -9,7 +9,7 @@ const Header = ({ theme, setTheme }) => {
   useEffect(() => {
     fetch("https://api.themoviedb.org/3/movie/popular", {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzQ1Y2JjN2Y4NTBmMzA2OWNjOGVkMjgxYzhhNzg4YSIsIm5iZiI6MTc3Mzk4MzQyMC43NDQsInN1YiI6IjY5YmNkNmJjYTRhZmM4NDA1MmVhMzc0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kDA24DOPaSq7wieMN2qLmw0C_HlktWOeJyb8s5VvSFo`
       }
     })
       .then(res => res.json())
